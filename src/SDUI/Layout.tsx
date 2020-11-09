@@ -12,7 +12,7 @@ export default function Layout({ id }: Props) {
 
   return (
     <>
-      {activeSection?.subsectionIds.map((id) => (
+      {activeSection?.sectionIds.map((id) => (
         <Section key={id} id={id} />
       ))}
     </>

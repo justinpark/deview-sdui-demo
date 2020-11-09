@@ -9,10 +9,10 @@ export default function Section({ id }: Props) {
   const { registry, sections } = useAppFrameworkContext();
   const config = sections?.get(id);
   const { component: Comp, loader } = useMemo(() => {
-    if (!registry || !config || !config.type || !registry[config.type]) {
+    if (!registry || !config || !config.sectionComponentType || !registry[config.sectionComponentType]) {
       return { component: null, loader: null };
     }
-    return registry[config.type];
+    return registry[config.sectionComponentType];
   }, []);
   const ref = useRef<React.FC<any> | null | undefined>(Comp);
   const { current: Component } = ref;
@@ -29,7 +29,7 @@ export default function Section({ id }: Props) {
 
   return (
     <div>
-      {loaded && Component && <Component {...config} />}
+      {loaded && Component && <Component {...config?.section} />}
     </div>
   );
 }

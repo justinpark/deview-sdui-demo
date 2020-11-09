@@ -15,12 +15,13 @@ export type Registry = {
 
 export type Layout = {
   id: string;
-  subsectionIds: string[];
+  sectionIds: string[];
 };
 
 export type Section = {
   id: string;
-  type: string;
+  sectionComponentType: string;
+  section: object;
 };
 
 export type Metadata = {

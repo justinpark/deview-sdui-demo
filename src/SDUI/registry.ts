@@ -7,11 +7,11 @@ const bannerLoader = () => import(
 );
 
 export const registry: Registry = {
-  TitleSection: {
+  TITLE: {
     component: Title,
   },
 
-  BannerSection: {
+  BANNER: {
     loader: bannerLoader,
   }
 };

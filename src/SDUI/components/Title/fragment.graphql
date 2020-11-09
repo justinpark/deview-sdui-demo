@@ -1,0 +1,4 @@
+fragment TitleFragment on Title {
+  title
+  subtitle
+}

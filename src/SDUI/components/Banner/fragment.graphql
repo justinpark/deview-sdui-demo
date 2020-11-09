@@ -1,0 +1,7 @@
+fragment BannerFragment on Banner {
+  icon
+  title
+  subtitle
+  ctaUrl
+  ctaCopy
+}

@@ -1,0 +1,18 @@
+#import "./components/Title/fragment.graphql"
+#import "./components/Banner/fragment.graphql"
+query UIQuery {
+  getUI {
+    sections {
+      id
+      sectionComponentType
+      section {
+        ...TitleFragment
+        ...BannerFragment
+      }
+    }
+    layouts {
+      id
+      sectionIds
+    }
+  }
+}

@@ -8,8 +8,8 @@ const UIContext = React.createContext<{
 
 export type Registry = {
   [key: string]: Partial<{
-    component: React.FC;
-    loader: () => Promise<{ default: React.FC }>;
+    component: React.FC<any>;
+    loader: () => Promise<{ default: React.FC<any> }>;
   }>;
 };
 

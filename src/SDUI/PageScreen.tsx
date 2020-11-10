@@ -1,7 +1,7 @@
-import React from "react";
-import Grid from "@material-ui/core/Grid";
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
 
-import Layout from "./Layout";
+import Layout from './Layout';
 
 export default function PageScreen() {
   return (

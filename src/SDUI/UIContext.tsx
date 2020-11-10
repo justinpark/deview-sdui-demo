@@ -9,7 +9,9 @@ const UIContext = React.createContext<{
 export type Registry = {
   [key: string]: Partial<{
     component: React.FC<any>;
-    loader: () => Promise<{ default: React.FC<any> }>;
+    loader: (() => Promise<{ default: React.FC<any> }>) & {
+      value?: React.FC<any>;
+    };
   }>;
 };
 
@@ -27,7 +29,7 @@ export type Section = {
 export type Metadata = {
   layouts: Layout[];
   sections: Section[];
-}
+};
 
 export default UIContext;
 

@@ -3,16 +3,27 @@ import { useAppFrameworkContext } from './UIContext';
 
 type Props = {
   id: string;
-}
+};
 
 export default function Section({ id }: Props) {
   const { registry, sections } = useAppFrameworkContext();
   const config = sections?.get(id);
   const { component: Comp, loader } = useMemo(() => {
-    if (!registry || !config || !config.sectionComponentType || !registry[config.sectionComponentType]) {
+    if (
+      !registry ||
+      !config ||
+      !config.sectionComponentType ||
+      !registry[config.sectionComponentType]
+    ) {
       return { component: null, loader: null };
     }
-    return registry[config.sectionComponentType];
+    const { component, loader } = registry[config.sectionComponentType];
+
+    // For server-side rendering
+    if (typeof window === 'undefined' && loader?.value) {
+      return { component: loader.value, loader };
+    }
+    return { component, loader };
   }, []);
   const ref = useRef<React.FC<any> | null | undefined>(Comp);
   const { current: Component } = ref;
@@ -27,9 +38,5 @@ export default function Section({ id }: Props) {
     }
   }, [loader]);
 
-  return (
-    <div>
-      {loaded && Component && <Component {...config?.section} />}
-    </div>
-  );
+  return <div>{loaded && Component && <Component {...config?.section} />}</div>;
 }

@@ -6,6 +6,11 @@ const bannerLoader = () => import(
   './components/Banner'
 );
 
+const productCardLoader = () => import(
+  /* webpackChunkName: "productCardSection" */
+  './components/ProductCard'
+);
+
 export const registry: Registry = {
   TITLE: {
     component: Title,
@@ -13,5 +18,9 @@ export const registry: Registry = {
 
   BANNER: {
     loader: bannerLoader,
+  },
+
+  PRODUCT_CARD: {
+    loader: productCardLoader,
   }
 };

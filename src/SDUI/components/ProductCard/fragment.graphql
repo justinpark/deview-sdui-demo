@@ -1,0 +1,9 @@
+fragment ProductCardFragment on ProductCard {
+  items {
+    title
+    subtitle
+    imageUrl
+    ctaUrl
+    ctaCopy
+  }
+}

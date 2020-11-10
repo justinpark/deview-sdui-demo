@@ -22,7 +22,21 @@ export interface UIQuery_getUI_sections_section_Banner {
   ctaCopy: string | null;
 }
 
-export type UIQuery_getUI_sections_section = UIQuery_getUI_sections_section_Title | UIQuery_getUI_sections_section_Banner;
+export interface UIQuery_getUI_sections_section_ProductCard_items {
+  __typename: "ProductItem";
+  title: string | null;
+  subtitle: string | null;
+  imageUrl: string | null;
+  ctaUrl: string | null;
+  ctaCopy: string | null;
+}
+
+export interface UIQuery_getUI_sections_section_ProductCard {
+  __typename: "ProductCard";
+  items: (UIQuery_getUI_sections_section_ProductCard_items | null)[] | null;
+}
+
+export type UIQuery_getUI_sections_section = UIQuery_getUI_sections_section_Title | UIQuery_getUI_sections_section_Banner | UIQuery_getUI_sections_section_ProductCard;
 
 export interface UIQuery_getUI_sections {
   __typename: "SectionContainer";

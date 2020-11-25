@@ -13,10 +13,17 @@ const productCardLoader = () =>
     './components/ProductCard'
   );
 
+const listMenuLoader = () =>
+  import(
+    /* webpackChunkName: "listMenuSection" */
+    './components/ListMenu'
+  );
+
 // For server-side rendering
 if (typeof window === 'undefined') {
   bannerLoader.value = require('./components/Banner');
   productCardLoader.value = require('./components/ProductCard');
+  listMenuLoader.value = require('./components/ProductCard');
 }
 
 export const registry: Registry = {
@@ -30,5 +37,9 @@ export const registry: Registry = {
 
   PRODUCT_CARD: {
     loader: productCardLoader,
+  },
+
+  LIST_MENU: {
+    loader: listMenuLoader,
   },
 };

@@ -1,6 +1,8 @@
 #import "./components/Title/fragment.graphql"
 #import "./components/Banner/fragment.graphql"
 #import "./components/ProductCard/fragment.graphql"
+#import "./components/ListMenu/fragment.graphql"
+
 query UIQuery {
   getUI {
     sections {
@@ -10,6 +12,7 @@ query UIQuery {
         ...TitleFragment
         ...BannerFragment
         ...ProductCardFragment
+        ...ListMenuFragment
       }
     }
     layouts {

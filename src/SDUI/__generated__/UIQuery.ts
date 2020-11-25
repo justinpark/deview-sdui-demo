@@ -39,7 +39,20 @@ export interface UIQuery_getUI_sections_section_ProductCard {
   items: (UIQuery_getUI_sections_section_ProductCard_items | null)[] | null;
 }
 
-export type UIQuery_getUI_sections_section = UIQuery_getUI_sections_section_Title | UIQuery_getUI_sections_section_Banner | UIQuery_getUI_sections_section_ProductCard;
+export interface UIQuery_getUI_sections_section_ListMenu_items {
+  __typename: "ListMenuItem";
+  title: string | null;
+  url: string | null;
+  divider: boolean | null;
+}
+
+export interface UIQuery_getUI_sections_section_ListMenu {
+  __typename: "ListMenu";
+  title: string | null;
+  items: (UIQuery_getUI_sections_section_ListMenu_items | null)[] | null;
+}
+
+export type UIQuery_getUI_sections_section = UIQuery_getUI_sections_section_Title | UIQuery_getUI_sections_section_Banner | UIQuery_getUI_sections_section_ProductCard | UIQuery_getUI_sections_section_ListMenu;
 
 export interface UIQuery_getUI_sections {
   __typename: "SectionContainer";

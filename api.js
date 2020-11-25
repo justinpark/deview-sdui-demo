@@ -18,7 +18,7 @@ const typeDefs = gql`
     section: AvailableSection
   }
 
-  union AvailableSection = Title | Banner | ProductCard
+  union AvailableSection = Title | Banner | ProductCard | ListMenu
 
   enum TitleLevel {
     XL
@@ -56,6 +56,17 @@ const typeDefs = gql`
 
   type Query {
     getUI: UIResponse
+  }
+
+  type ListMenuItem {
+    title: String
+    url: String
+    divider: Boolean
+  }
+
+  type ListMenu {
+    title: String
+    items: [ListMenuItem]
   }
 `;
 
@@ -102,6 +113,27 @@ const resolvers = {
             __typename: 'Banner',
             title: '배너 제목 입니다',
             subtitle: '배너 설명 입니다.',
+          }
+        },
+        {
+          id: 'sidemenu01',
+          sectionComponentType: 'LIST_MENU',
+          section: {
+            __typename: 'ListMenu',
+            title: '참조 링크',
+            items: [
+              {
+                title: '깃헙 홈페이지',
+                url: 'https://github.com/justinpark/deview-sdui-demo',
+              },
+              {
+                divider: true,
+              },
+              {
+                title: 'Deview 2020 홈페이지',
+                url: 'https://deview.kr/2020',
+              }
+            ]
           }
         },
         {
@@ -169,7 +201,7 @@ const resolvers = {
       },
       {
         id: 'SIDEBAR',
-        sectionIds: ['banner01'],
+        sectionIds: ['banner01', 'sidemenu01'],
       },
     ],
   },

@@ -1,0 +1,8 @@
+fragment ListMenuFragment on ListMenu {
+  title
+  items {
+    title
+    url
+    divider
+  }
+}

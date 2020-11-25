@@ -27,7 +27,7 @@
   "scripts": {
     "api": "node api.js",
     "update-schema": "apollo-codegen introspect-schema http://localhost:4000/graphql --output schema.json",
-    "codegen": "apollo client:codegen --includes=**/*.graphql --excludes=node_modules/* --localSchemaFile=schema.json --target=typescript",
+    "codegen": "apollo client:codegen --includes=**/*.graphql --excludes=node_modules/* --localSchemaFile=schema.json --target=typescript --globalTypesFile=src/SDUI/__generated__/globalTypes.ts",
     "react": "react-scripts start",
     "start": "concurrently \"yarn api\" \"yarn react\"",
     "build": "react-scripts build",

@@ -113,17 +113,19 @@ const resolvers = {
           }
         },
       ],
-      layouts: [
-        {
-          id: 'MAIN',
-          sectionIds: ['title01', 'title02', 'product01'],
-        },
-        {
-          id: 'SIDEBAR',
-          sectionIds: ['banner01'],
-        }
-      ],
     }),
+  },
+  UIResponse: {
+    layouts: () => [
+      {
+        id: 'MAIN',
+        sectionIds: ['title01', 'title02', 'product01'],
+      },
+      {
+        id: 'SIDEBAR',
+        sectionIds: ['banner01'],
+      },
+    ],
   },
 };
 

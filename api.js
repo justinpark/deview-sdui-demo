@@ -87,6 +87,15 @@ const resolvers = {
           }
         },
         {
+          id: 'title03',
+          sectionComponentType: 'TITLE',
+          section: {
+            __typename: 'Title',
+            title: 'ML/AI 관련 강의들',
+            level: 'SM',
+          }
+        },
+        {
           id: 'banner01',
           sectionComponentType: 'BANNER',
           section: {
@@ -109,7 +118,7 @@ const resolvers = {
               },
               {
                 title: '외국어가 읽힌다 딱! (파파고 이미지 번역)',
-                imageUrl: 'https://deview.kr/data/deview/acnr/468-2.png',
+                imageUrl: 'https://deview.kr/2020/img/img_topic_graphic_4.png',
                 ctaCopy: '강의 정보',
                 ctaUrl: 'https://deview.kr/2020/sessions/338',
               },
@@ -122,6 +131,33 @@ const resolvers = {
             ]
           }
         },
+        {
+          id: 'feature01',
+          sectionComponentType: 'PRODUCT_CARD',
+          section: {
+            __typename: 'ProductCard',
+            items: [
+              {
+                title: 'COVID-19에 대응하는 네이버의 동영상 트래픽 컨트롤 시스템',
+                imageUrl: 'https://deview.kr/2020/img/img_topic_graphic_4.png',
+                ctaCopy: '강의 정보',
+                ctaUrl: 'https://deview.kr/2020/sessions/329',
+              },
+              {
+                title: '누구나 만드는 내 목소리 합성기 Ⅱ (커스텀 보이스 파이프라인)',
+                imageUrl: 'https://deview.kr/data/deview/acnr/415.png',
+                ctaCopy: '강의 정보',
+                ctaUrl: 'https://deview.kr/2020/sessions/354',
+              },
+              {
+                title: '유저가 좋은 작품(웹툰)를 만났을 때(유저의 탐색, 발견 그리고 만족도에 대하여 탐색적 분석하기)',
+                imageUrl: 'https://deview.kr/2020/img/img_topic_graphic_4.png',
+                ctaCopy: '강의 정보',
+                ctaUrl: 'https://deview.kr/2020/sessions/332',
+              }
+            ]
+          }
+        },
       ],
     }),
   },
@@ -129,7 +165,7 @@ const resolvers = {
     layouts: () => [
       {
         id: 'MAIN',
-        sectionIds: ['title01', 'title02', 'product01'],
+        sectionIds: ['title01', 'title02', 'product01', 'title03', 'feature01'],
       },
       {
         id: 'SIDEBAR',

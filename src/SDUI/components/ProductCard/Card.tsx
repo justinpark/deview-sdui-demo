@@ -1,19 +1,19 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Paper";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import CardActions from "@material-ui/core/CardActions";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Paper';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import CardActions from '@material-ui/core/CardActions';
 
-import { ProductCardFragment_items } from "./__generated__/ProductCardFragment";
+import { ProductCardFragment_items } from './__generated__/ProductCardFragment';
 
 type Props = Omit<ProductCardFragment_items, '__typename'>;
 
 const useStyles = makeStyles(() => ({
   media: {
-    height: 150,
+    height: 350,
   },
 }));
 

@@ -20,9 +20,18 @@ const typeDefs = gql`
 
   union AvailableSection = Title | Banner | ProductCard
 
+  enum TitleLevel {
+    XL
+    LG
+    MD
+    SM
+    XS
+  }
+
   type Title {
     title: String
     subtitle: String
+    level: TitleLevel
   }
 
   type Banner {
@@ -73,7 +82,8 @@ const resolvers = {
           sectionComponentType: 'TITLE',
           section: {
             __typename: 'Title',
-            title: '발표될 연사 강의들'
+            title: '발표될 연사 강의들',
+            level: 'SM',
           }
         },
         {

@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { TitleLevel } from "./globalTypes";
+
 // ====================================================
 // GraphQL query operation: UIQuery
 // ====================================================
@@ -11,6 +13,7 @@ export interface UIQuery_getUI_sections_section_Title {
   __typename: "Title";
   title: string | null;
   subtitle: string | null;
+  level: TitleLevel | null;
 }
 
 export interface UIQuery_getUI_sections_section_Banner {
